@@ -10,7 +10,4 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Confere versao do Ubuntu
-              run: cat /etc/os-release
-            
-            - name: Exibir mensagem
-               run: echo "Estou fazendo o curso de Github Actions da Linuxtips"       
+                run: cat /etc/os-release
