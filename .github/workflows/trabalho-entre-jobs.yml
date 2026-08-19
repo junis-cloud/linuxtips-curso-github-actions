@@ -26,7 +26,7 @@ jobs:
             - name: Listar arquivo mensagem.txt
               run:  ls -lha && ./strigus
                        
-            - usues: actions/download-artifact@v4
+            - uses: actions/download-artifact@v4
               with:
                 name: strigus
                 path: mensagem.txt
