@@ -33,7 +33,7 @@ jobs:
                 path: mensagem.txt
             
             - name: Listar arquivo mensagem.txt
-              run:  ls -lha && ./strigus
+              run:  ls -lha && ls ./strigus
             
             - name: Movimenta arquivo mensagem.txt para fora da pasta strigus
               run: mv strigus/mensagem.txt . && rm -rf ./strigus
