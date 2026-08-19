@@ -1,13 +1,13 @@
 name: Primeiro workflow Linuxtips
-#evento
+
 on:
     push:
         branches:
             - main
-#Trigger
+
 jobs:
     giropops:
         runs-on: ubuntu-latest
         steps:
             - name: Confere versao do Ubuntu
-                run: cat /etc/os-release
+              run: cat /etc/os-release
