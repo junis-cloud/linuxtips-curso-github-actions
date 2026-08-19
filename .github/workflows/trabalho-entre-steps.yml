@@ -1,0 +1,22 @@
+name: Lendo arquivo entre steps
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    entre-steps:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Confere versao do Ubuntu
+              run: cat /etc/os-release
+            
+            - name: Exibe uma Mensangem
+              run: echo "Estou fazendo o curso de Github Actions da Linuxtips" > mensagem.txt
+
+            - name: Lista arquivos
+              run: ls -lha
+
+            - name: Ler contudo do arquivo
+              run:  cat mensagem.txt               
