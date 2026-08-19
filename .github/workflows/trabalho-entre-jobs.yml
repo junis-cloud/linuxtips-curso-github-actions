@@ -1,0 +1,41 @@
+name: Lendo arquivo entre Jobs
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    jobs_1:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Confere versao do Ubuntu
+              run: cat /etc/os-release
+            
+            - name: Exibe uma Mensangem
+              run: echo "Estou fazendo o curso de Github Actions da Linuxtips" > mensagem.txt
+
+            - uses: actions/upload-artifact@v4
+              with:
+                name: strigus
+                path: mensagem.txt
+            
+    jobs_2:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Listar arquivo mensagem.txt
+              run:  ls -lha && ./strigus
+                       
+            - usues: actions/download-artifact@v4
+              with:
+                name: strigus
+                path: mensagem.txt
+
+            - name: Movimenta arquivo mensagem.txt para fora da pasta strigus
+              run: mv strigus/mensagem.txt . && rm -rf ./strigus
+            
+            - name: Ver o conteudo do diretorio
+              run: ls -lha
+            
+            - name: Exibir conteudo de mensagem.txt
+              run: cat mensagem.txt
