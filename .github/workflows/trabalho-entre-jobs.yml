@@ -18,7 +18,7 @@ jobs:
             - uses: actions/upload-artifact@v4
               with:
                 name: strigus-upload
-                path: ${{ github.workspaces }}/mensagem.txt
+                path: ${{ github.workspace }}/mensagem.txt
             
     jobs_2:
         runs-on: ubuntu-latest
