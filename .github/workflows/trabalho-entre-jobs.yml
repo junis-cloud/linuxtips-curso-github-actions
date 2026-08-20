@@ -30,7 +30,7 @@ jobs:
             - uses: actions/download-artifact@v4
               with:
                 name: strigus-upload
-                path: mensagem.txt
+                path: strigus
             
             - name: Listar arquivo mensagem.txt
               run:  ls -lha && ls ./strigus-upload/
